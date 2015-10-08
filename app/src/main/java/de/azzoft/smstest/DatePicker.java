@@ -46,18 +46,12 @@ public class DatePicker extends LinearLayout {
         View root = layoutInflater.inflate(R.layout.date_picker, this, true);
         ButterKnife.bind(this, root);
 
-        firstSpinner.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, getTimeRangeList(20)));
-        secondSpinner.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, getTimeRangeList(60)));
-        thirdSpinner.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, getTimeRangeList(120)));
+        firstSpinner.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, getStringList(20)));
+        secondSpinner.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, getStringList(60)));
+        thirdSpinner.setAdapter(new ArrayAdapter<>(context, android.R.layout.simple_spinner_item, getStringList(120)));
     }
 
-    /**
-     * Get either minutes or hours as list.
-     *
-     * @param to count to
-     * @return List of type string
-     */
-    private List<String> getTimeRangeList(int to) {
+    private List<String> getStringList(int to) {
 
         List<String> list = new ArrayList<>();
 
